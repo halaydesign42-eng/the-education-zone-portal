@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Education Zone Student Portal</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:#f4f0fa;color:#281442}
+header{background:#32145c;color:white;padding:22px;text-align:center;border-bottom:4px solid #d6ae55}
+header h1{margin:0;font-size:24px}
+main{max-width:850px;margin:35px auto;padding:15px}
+.card{background:white;padding:25px;border-radius:15px;box-shadow:0 4px 18px #0001;margin-bottom:20px}
+h2{color:#482477}
+input{width:100%;padding:13px;margin:9px 0;border:1px solid #ddd;border-radius:8px}
+button{background:#482477;color:white;border:0;padding:13px 20px;border-radius:8px;width:100%;font-weight:bold}
+button:hover{background:#30104f}
+.hidden{display:none}
+.gold{color:#b58a31}
+</style>
+</head>
+<body>
+<header>
+<h1>THE EDUCATION ZONE</h1>
+<p>Coaching Center & College</p>
+</header>
+<main>
+<div class="card" id="login">
+<h2>Student Login</h2>
+<p>Login with your Student ID and password.</p>
+<input id="studentId" placeholder="Student ID">
+<input id="password" type="password" placeholder="Password">
+<button onclick="loginStudent()">Login</button>
+<p id="message"></p>
+</div>
+<div class="card hidden" id="dashboard">
+<h2>Welcome, <span id="studentName"></span></h2>
+<p class="gold">Student Dashboard</p>
+<p>Student ID: <span id="showId"></span></p>
+<p>Department: <span id="department"></span></p>
+<p>Semester: <span id="semester"></span></p>
+<button onclick="logoutStudent()">Logout</button>
+</div>
+</main>
+<script>
+function loginStudent(){
+document.getElementById("message").textContent=
+"Database authentication is not connected yet. Please connect a secure backend before student login.";
+}
+function logoutStudent(){
+document.getElementById("dashboard").classList.add("hidden");
+document.getElementById("login").classList.remove("hidden");
+}
+</script>
+</body>
+</html>
